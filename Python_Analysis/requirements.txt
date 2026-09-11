@@ -1,0 +1,28 @@
+# Data Processing and Analysis
+pandas==2.2.3
+numpy==1.26.4
+scipy==1.14.1
+
+# Machine Learning
+scikit-learn==1.5.2
+joblib==1.4.2
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+# plotly is optional for interactive charts.
+# statsmodels is optional for future time-series models.
+
+# Utilities
+python-dotenv==1.0.0
+tqdm==4.66.1
+pyyaml==6.0.1
+
+# Database
+# sqlite3 is included with Python and does not need to be installed with pip.
+
+# Jupyter is optional and is not required to run the analysis scripts.
+# Install separately when you want to use the notebooks:
+# jupyter
+# ipython
+# ipykernel

@@ -1,0 +1,74 @@
+# Git ignore file for System Resource & Performance Monitor
+
+## Build artifacts
+build/
+bin/
+dist/
+*.o
+*.a
+*.lib
+*.exe
+*.dll
+
+## IDEs
+.vs/
+.vscode/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+.idea/
+
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+## Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+## Database
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+## Generated analysis output
+models/*.pkl
+models/*.txt
+reports/*.png
+reports/*.md
+
+## Logs
+*.log
+logs/
+
+## OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+## Project specific
+*.tmp
+temp/
+cache/
+
+## Node modules (if using any web tools)
+node_modules/
+npm-debug.log
+
+## Virtual environments
+venv/
+env/
