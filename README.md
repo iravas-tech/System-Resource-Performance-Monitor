@@ -1277,7 +1277,7 @@ Don't know if you have these? Open Command Prompt and type:
 2. Copy and paste these commands:
 
 ```bash
-cd c:\Users\irava\Projects\System-Resource-Performance-Monitor
+cd path\to\System-Resource-Performance-Monitor
 mkdir build
 cd build
 cmake ..
@@ -1320,7 +1320,7 @@ Run the project in this order. The Python programs need the database created by 
 Run these commands from the main project folder:
 
 ```powershell
-cd C:\Users\irava\Projects\System-Resource-Performance-Monitor
+cd path\to\System-Resource-Performance-Monitor
 cmake -S . -B build
 cmake --build build --config Release
 ```
@@ -1349,7 +1349,7 @@ system_monitor.log
 Open a new PowerShell window in the main project folder:
 
 ```powershell
-cd C:\Users\irava\Projects\System-Resource-Performance-Monitor
+cd path\to\System-Resource-Performance-Monitor
 py -3 -m venv Python_Analysis\venv
 Python_Analysis\venv\Scripts\Activate.ps1
 python -m pip install -r Python_Analysis\requirements.txt
@@ -1441,7 +1441,7 @@ A "virtual environment" is like a separate workspace just for this project. It k
 1. Open PowerShell in the main project folder:
 
 ```bash
-cd C:\Users\irava\Projects\System-Resource-Performance-Monitor
+cd path\to\System-Resource-Performance-Monitor
 ```
 
 2. Create the virtual environment:
