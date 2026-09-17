@@ -201,17 +201,20 @@ class TrendAnalyzer:
             logger.warning("'hour' column required for seasonality analysis")
             return df_copy, np.array([])
 
-        # Calculate average for each hour
-        hourly_avg = df.groupby('hour')[column].mean()
+        # Calculate average for each hour, including hours with no readings.
+        hourly_avg = df_copy.groupby('hour')[column].mean().reindex(range(period))
         overall_avg = df[column].mean()
 
-        # Seasonal factors
-        seasonal_factors = (hourly_avg / overall_avg).values
+        # Standardized inputs can have an overall mean near zero, so use the
+        # hourly mean directly instead of dividing by an unstable baseline.
+        if np.isclose(overall_avg, 0.0):
+            seasonal_factors = hourly_avg.fillna(0.0).to_numpy()
+        else:
+            seasonal_factors = (hourly_avg / overall_avg).fillna(1.0).to_numpy()
 
         # Add seasonal component back to dataframe
-        df_copy['seasonal_component'] = df_copy['hour'].map(
-            lambda h: seasonal_factors[h] if h < len(seasonal_factors) else 1.0
-        )
+        factor_by_hour = dict(enumerate(seasonal_factors))
+        df_copy['seasonal_component'] = df_copy['hour'].map(factor_by_hour).fillna(1.0)
 
         logger.info(f"Calculated seasonality for {column} with period {period}")
         return df_copy, seasonal_factors

@@ -78,6 +78,9 @@ class MetricsPreprocessor:
                 features.remove('timestamp')
             if 'process_id' in features:
                 features.remove('process_id')
+            for time_feature in ('hour', 'day_of_week', 'day_of_month', 'month', 'is_weekend'):
+                if time_feature in features:
+                    features.remove(time_feature)
 
         if method == 'standard':
             scaler = StandardScaler()
